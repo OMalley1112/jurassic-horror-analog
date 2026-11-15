@@ -27,6 +27,22 @@ namespace AnalogHorror.EditorTools
         [MenuItem("Jurassic Horror/Build Complete Map && Player")]
         public static void BuildAll()
         {
+            try
+            {
+                BuildAllInner();
+                System.IO.File.WriteAllText("Temp/build_error.txt", "OK");
+            }
+            catch (System.Exception ex)
+            {
+                // the editor log can be stolen by a second Unity instance —
+                // always leave the failure where we can read it
+                System.IO.File.WriteAllText("Temp/build_error.txt", ex.ToString());
+                Debug.LogException(ex);
+            }
+        }
+
+        static void BuildAllInner()
+        {
             if (!EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
                 return;
 
@@ -57,6 +73,7 @@ namespace AnalogHorror.EditorTools
             BuildMenu();            // title screen — gates the run
             BuildMovieScenes();     // JP III corner: plane wreck, spinosaurus
             BuildRanch();           // far north: Ranch 04, the hatching yard
+            BuildIslandWorld();     // island two: Jurassic World, across the channel
 
             SaveAndRegisterScene();
         }

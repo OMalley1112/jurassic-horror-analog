@@ -68,7 +68,7 @@ follows movement:
 | F | flashlight on/off |
 | R | swap battery (4 spare cells) / skip a cutscene (boss intro & ending film) / rewind at the end |
 | LMB | **flare gun** — fires only during the gate showdown: 4 hits drive the T-Rex off the road |
-| E | interact (take power cells) / **talk to survivors** |
+| E | interact (take power cells) / **talk to survivors** / **ride the ferry** between islands |
 | Q | throw a bone — lures every nearby dinosaur (even the T-Rex) to the noise |
 | Esc | pause the tape |
 
@@ -204,6 +204,42 @@ follows movement:
   by the path. Perimeter chain-link with a gate gap where the path walks
   in, `RANCH 04 — HATCHING SECTION` sign, 16 scrub pines (`RanchTree_*`,
   named so the verified `Tree_Trunk` count stays put).
+
+### The second island — JURASSIC WORLD (two islands + ferry)
+
+The park is now **two islands** separated by a deep channel (x 140–166,
+ocean quad at y −0.35). Island one (x ±140) is the movie park above;
+island two (x 166–306, z ±100) is the rebuilt **Jurassic World** — a
+free-roam bonus district that never touches the 3-cell escape mission.
+
+- **The ferry** (`IslandFerry`, 2 docks): stand on either pier and press
+  **E** when the muted `E — FERRY TO THE OTHER ISLAND` prompt shows
+  (11 px, bottom of the screen). The tape fades to black with a VHS
+  glitch, then the CharacterController is teleported to the opposite
+  dock. The prompt stays dead while the menu, pause card, boss intro,
+  ending or a catch sequence owns the screen. Two moored **ferry boats**
+  (hull, deck, cabin, mast, tyre fenders) sit at the west and east piers.
+- **Arrival gate arch** — the JW gate with flanking pillars, banner and
+  `JURASSIC WORLD` signage where the monorail/street begins.
+- **Main street** — 9 procedurally built shops and restaurants
+  (`JWShop_Body`, awnings, lit windows, signs: `BURGER GRILL`,
+  `ISLE NUBlar SHOP`, `CINEMA`, `GIFT SHOP`, …) running up to the plaza.
+- **Innovation Center** — big glass dome (`Innov_Dome`), entry doors and
+  a huge **hanging fossil** (spine + ribs + skull) suspended in the lobby.
+- **Gyrosphere Valley** — the sunken valley wall, 4 glass **gyrospheres**
+  (`Gyro_Body`) on the grass and the `GYROSPHERE VALLEY` sign.
+- **Paddock 09** — high fence with a **breached gate** (bent panels,
+  drag marks) and the white **Indominus rex** standing outside it,
+  breathing and scanning (`TintDino` white hide, glowing eyes).
+- **Raptor research pen** — walled enclosure with a hatchery door, a
+  raised **catwalk** (`Catwalk_Deck`) over it and raptors inside
+  (one loose at the treeline).
+- **Monorail** — a long elevated `Monorail_Beam` on pillars with a
+  station deck, running along the street.
+- The east jungle hedge is split for the pier gap (z −4.5..4.5), and the
+  piers are walled so the boundary stays watertight everywhere else.
+  The briefing line `FERRY EAST — A SECOND PARK LIES ACROSS THE WATER`
+  is the mission's only mention of it.
 
 ### Talking survivors (`NpcSurvivor`)
 Three stranded survivors you can walk up to and **press E** to talk to:

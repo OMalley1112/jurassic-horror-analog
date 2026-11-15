@@ -68,6 +68,8 @@ namespace AnalogHorror
             Broadcast("3 POWER CELLS:  LOBBY · TUNNEL END · T-REX PADDOCK", 5.0f);
             yield return new WaitForSeconds(5.6f);
             Broadcast("CTRL CROUCH · SHIFT SPRINT · F LAMP · E INTERACT", 4.4f);
+            yield return new WaitForSeconds(5.0f);
+            Broadcast("FERRY EAST — A SECOND PARK LIES ACROSS THE WATER", 4.6f);
         }
 
         void Broadcast(string text, float duration)

@@ -72,12 +72,15 @@ namespace AnalogHorror.EditorTools
                 StripCollider(p);
             }
 
-            // jungle boundary hedge (keeps the player inside the world — ±138 now)
+            // boundary hedge (keeps the player inside the world — ±138 now)
             var hedge = M("Hedge");
             Box(envRoot, "Boundary_N", new Vector3(0f, 4f, -138f), new Vector3(276f, 8f, 6f), hedge);
             Box(envRoot, "Boundary_S", new Vector3(0f, 4f, 138f), new Vector3(276f, 8f, 6f), hedge);
             Box(envRoot, "Boundary_W", new Vector3(-138f, 4f, 0f), new Vector3(6f, 8f, 276f), hedge);
-            Box(envRoot, "Boundary_E", new Vector3(138f, 4f, 0f), new Vector3(6f, 8f, 276f), hedge);
+            // east side leaves a gap at z[-4.5,4.5] — the ferry pier runs
+            // through it (island two, MapBuilder.Islands)
+            Box(envRoot, "Boundary_E", new Vector3(138f, 4f, -71.25f), new Vector3(6f, 8f, 133.5f), hedge);
+            Box(envRoot, "Boundary_E", new Vector3(138f, 4f, 71.25f), new Vector3(6f, 8f, 133.5f), hedge);
         }
 
         // ------------------------------------------------------------ jungle
